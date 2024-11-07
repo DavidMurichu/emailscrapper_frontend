@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app # This mounts the current directory to /app in the container
+    ports:
+      - "3039:3039" # Map port 3039 of the container to port 3039 on the host
+    command: npm run dev # Adjust this command if your start script is different
